@@ -1,0 +1,29 @@
+---
+# tasks file for postgres-database
+- name: create postgres db
+  sudo_user: postgres
+  postgresql_db:
+    name={{db_name}}
+    encoding='UTF-8'
+    login_user={{postgres_login_user}}
+    login_password={{postgres_login_password}}
+    port={{postgres_port}}
+  register: create_db
+
+- name: create db user
+  sudo_user: postgres
+  postgresql_user:
+    db={{db_name}}
+    name={{db_user}}
+    password={{db_password}}
+    priv="ALL"
+    role_attr_flags=CREATEDB
+  register: create_db_user
+
+- name: set db privileges
+  sudo_user: postgres
+  postgresql_privs:
+    database={{db_name}}
+    type=database
+    roles={{db_user}},postgres
+    privs=ALL

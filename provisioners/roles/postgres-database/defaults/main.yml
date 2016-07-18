@@ -1,0 +1,10 @@
+---
+# defaults file for postgres-database
+db_user: postgres
+db_password: postgres
+db_name: mydb
+# don't create a default for passwords, force people to override this
+
+postgres_login_user: postgres
+postgres_port: 5432
+postgres_login_password: postgres
