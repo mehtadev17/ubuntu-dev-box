@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/trusty32"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -62,7 +62,7 @@ Vagrant.configure(2) do |config|
   # end
 
   config.vm.provision :ansible do |ansible|
-    ansible.playbook = "provisioners/playbook_dev.yml"
+    ansible.playbook = "provisioners/playbook.yml"
     ansible.verbose = 'v'
       # Creates proper inventory file with correct ssh port
       # The generated inventory file is located at:
@@ -72,3 +72,4 @@ Vagrant.configure(2) do |config|
         "development" => ["default"]
       }
   end
+end

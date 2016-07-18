@@ -1,0 +1,5 @@
+---
+# tasks file for git
+
+# Install git
+- apt: name=git
