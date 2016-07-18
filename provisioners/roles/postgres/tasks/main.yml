@@ -1,2 +1,4 @@
 ---
 # tasks file for postgres
+# Install postgresql
+- apt: name=postgresql-9.5
