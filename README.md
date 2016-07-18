@@ -1,4 +1,8 @@
 # ubuntu1604-dev-box
 
 # Run Locally: 
-`ansible-playbook provisioners/playbook.yml -i host_vars/dev_host --connection=local`
+```
+sudo su #Type in password when prompted and hit enter
+ansible-playbook provisioners/playbook.yml -i host_vars/dev_host --connection=local
+exit
+```
