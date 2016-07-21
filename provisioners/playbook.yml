@@ -6,3 +6,4 @@
     - postgres
     - git
     - postgres-database
+    - redis-server

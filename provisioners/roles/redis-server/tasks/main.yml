@@ -1,0 +1,3 @@
+---
+# tasks file for redis-server
+- apt: name=redis-server
